@@ -1,0 +1,30 @@
+<script type='text/javascript'>
+$(function() {
+Dashing.gridsterLayout('[{"col":2,"row":2,"size_x":2,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":2,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":2}]')
+});
+</script>
+<% content_for :title do %>VersionOne Iteration Dashboard<% end %>
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="cumulativeflow" data-view="Rickshawgraphalt" data-title="Cumulative Flow" data-renderer="area" data-summary-method="sum" data-min="0" data-legend="true" data-unstack="false" data-color-scheme="compliment" data-displayed-value=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="velocitytrend" data-view="Rickshawgraph" data-renderer="bar" data-summary-method="last" data-legend="false" data-title="Velocity Trend" data-min="0" data-max="40"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="cycletime" data-view="Number" data-title="Cycle Time" data-suffix="d" data-moreinfo=""></div>
+      <i class="icon-rotate-right icon-background"></i>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="burndownchart" data-view="Rickshawgraph" data-renderer="line" data-summary-method="last" data-min="0" data-legend="false" data-title="Sprint Burndown"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
+      <div data-id="epicprogress" data-view="ProgressBars" data-title="Feature Progress"></div>
+    </li>
+  </ul>
+</div>
