@@ -2,21 +2,25 @@ require 'HTTParty'
 require 'json'
 require 'date'
 
-
 $v1user = "admin"
 $v1pass = "admin"
 $auth = {:username => $v1user, :password => $v1pass}
 $v1queryurl = "http://win8/VersionOne/query.v1"
 
-def GetEpicProgress()
+def GetEpicProgress(parentprojectoid,teamoid,epictypename)
+
+	totalcolumnkey = "SubsAndDown:PrimaryWorkitem[AssetState=\'64\',\'128\'].Estimate.@Sum"
+	closedcolumnkey = "SubsAndDown:PrimaryWorkitem[AssetState=\'128\'].Estimate.@Sum"
+	if teamoid.length > 0
+		totalcolumnkey = "SubsAndDown:PrimaryWorkitem[AssetState=\'64\',\'128\';Team=\'#{teamoid}\'].Estimate.@Sum"
+		closedcolumnkey = "SubsAndDown:PrimaryWorkitem[AssetState=\'128\';Team=\'#{teamoid}\'].Estimate.@Sum"
+	end	
 	query = '[{
 				"from": "Epic",
-				"select": [ "Name",
-						    "SubsAndDown:PrimaryWorkitem[AssetState=\'64\',\'128\'].Estimate.@Sum", 
-						    "SubsAndDown:PrimaryWorkitem[AssetState=\'128\'].Estimate.@Sum" ],
+				"select": [ "Name","' + totalcolumnkey + '", "' + closedcolumnkey + '" ],
 				"filter": [ "AssetState=\'64\',\'128\'", 
-							"Scope.ParentMeAndUp.Name=\'Call Center (Product)\'",
-							"Category.Name=\'Feature\'" ],
+							"Scope.ParentMeAndUp=\'' + parentprojectoid + '\'",
+							"Category.Name=\'' +  epictypename + '\'" ],
 				"sort": "Order"
 	}]'
 
@@ -28,8 +32,8 @@ def GetEpicProgress()
 	epics.each do |epic|
 		epicoid = epic["_oid"]
 		epicname = epic["Name"]
-		totalestimate = epic["SubsAndDown:PrimaryWorkitem[AssetState=\'64\',\'128\'].Estimate.@Sum"].to_f
-		closedestimate = epic["SubsAndDown:PrimaryWorkitem[AssetState=\'128\'].Estimate.@Sum"].to_f
+		totalestimate = epic[totalcolumnkey].to_f
+		closedestimate = epic[closedcolumnkey].to_f
 		if totalestimate > 0 then
 			perccomplete = ((closedestimate / totalestimate) * 100).round(1)
 		else
@@ -50,7 +54,7 @@ def GetEpicProgress()
 end
 
 SCHEDULER.every '1m', :first_in => 0 do |job|
-  data = GetEpicProgress()
+  data = GetEpicProgress("Scope:1093","","Feature")
 
   datax = JSON.parse(data)
   send_event('epicprogress', progress_items: datax)
