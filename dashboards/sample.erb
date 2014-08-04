@@ -1,6 +1,6 @@
 <script type='text/javascript'>
 $(function() {
-Dashing.gridsterLayout('[{"col":2,"row":2,"size_x":2,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":2,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":2}]')
+Dashing.gridsterLayout('[{"col":2,"row":2,"size_x":2,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":2,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":2},{"col":1,"row":3,"size_x":1,"size_y":1},{"col":3,"row":4,"size_x":2,"size_y":1},{"col":4,"row":3,"size_x":1,"size_y":1},{"col":1,"row":4,"size_x":2,"size_y":1}]')
 });
 </script>
 <% content_for :title do %>VersionOne Iteration Dashboard<% end %>
@@ -11,11 +11,11 @@ Dashing.gridsterLayout('[{"col":2,"row":2,"size_x":2,"size_y":1},{"col":4,"row":
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="velocitytrend" data-view="Rickshawgraph" data-renderer="bar" data-summary-method="last" data-legend="false" data-title="Velocity Trend" data-min="0" data-max="40"></div>
+      <div data-id="velocitytrend" data-view="Rickshawgraph" data-renderer="bar" data-summary-method="last" data-legend="false" data-title="Velocity Trend" data-min="0" data-max="40" style="background-color:#77132f;"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="cycletime" data-view="Number" data-title="Cycle Time" data-suffix="d" data-moreinfo=""></div>
+      <div data-id="cycletime" data-view="Number" data-title="Cycle Time" data-suffix="d" data-moreinfo="" style="background-color:#96bf48;"></div>
       <i class="icon-rotate-right icon-background"></i>
     </li>
 
@@ -25,6 +25,24 @@ Dashing.gridsterLayout('[{"col":2,"row":2,"size_x":2,"size_y":1},{"col":4,"row":
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
       <div data-id="epicprogress" data-view="ProgressBars" data-title="Feature Progress"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="remainingdays" data-view="Number" data-title="" data-suffix="d" data-moreinfo=""></div>
+      <i class="icon-calendar icon-background"></i>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="storyprogress" data-view="ProgressBarsStories" data-title="Story Progress"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="defectpriority" data-view="Fullpie" data-title="Defects by Priority" style="background-color:#bd2131;"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="conversations" data-view="Comments" style="background-color:#ff9618;" data-moreinfo=""></div>
+      <i class="icon-comment icon-background"></i>
     </li>
   </ul>
 </div>
