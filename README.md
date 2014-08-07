@@ -30,23 +30,34 @@ The dashboard itself is targeted for agile teams that predominantly iterate (i.e
  
    ```ruby
    class V1conn
-   	def initialize
-   		@user = "andre"
-   		@pass = "andre"
-   		@auth = {:username => user, :password => pass}
-   		@baseurl = "http://win8/VersionOne"
-   	end
+      def initialize
+   		   @user = "username"
+   		   @pass = "password"
+   		   @auth = {:username => user, :password => pass}
+   		   @baseurl = "http://address/instancename"
+   	   end
    
-   	attr_accessor :user
-   	attr_accessor :pass
-   	attr_accessor :auth
-   	attr_accessor :baseurl
+   	   attr_accessor :user
+   	   attr_accessor :pass
+   	   attr_accessor :auth
+   	   attr_accessor :baseurl
    end
    ```
 
+1. Now the fun part, pick your widgets from the next section that you want to use and follow the setup and usage instructions.
+
+   *NOTE - Like installing and developing anything, I suggest testing as you go -- you don't know what may go wrong.  So try one widget at a time.*
 
 ## VersionOne Enabled Widgets
 
+| Widget | Description | Roadmap |
+|--------|-------------|------------------|
+| Conversations | Randomly rotates through the Conversations that impact a particularly configured TeamRoom. | |
+| Cumulative Flow | A standard cumulative flow based on total Estimate points that uses the Statuses based on the Project provided, this can be optionally configured to accept a Team | Add ability to filter based on Program. |
+| Cycle Time | Calculates the time it takes to move from one Status within a Project to another -- progression through the SDLC, calculated in days. This is calculated by Project and takes in the number of days to consider as well as the From and To Status. | |
+| Days Left In Sprint | Calculates the number of days left in sprint based on the end date of the current active sprint.  Based on Project specified. | Optionally have it take in the Sprint Schedule. |
+| Defects by Priority | | |
+| Sprint Burndown | A standard sprint burndown based on the total remaining To Do. This can be configured against a particular Project backlog and optionally, a Team. | Add Sprint Schedule as a required filter, and make Project optional. |
 
 ## Technical Details
 
