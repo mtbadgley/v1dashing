@@ -13,7 +13,20 @@ The dashboard itself is targeted for agile teams that predominantly iterate (i.e
 ## Getting Started
 
 
+
 ## VersionOne Enabled Widgets
 
 
 ## Technical Details
+
+This project was developed using Ruby 2.0.0p451 (2014-02-24 revision 45167).  [HTTParty](http://johnnunemaker.com/httparty/) and [Nokogiri](http://nokogiri.org) are used to make the calls to the VersionOne's API. 
+
+The authentication with VersionOne uses [Basic Authentication](http://community.versionone.com/Developers/Developer-Library/Documentation/API/Security/Application_Authentication/Basic_Authentication).  VersionOne does support [OAuth 2.0](http://community.versionone.com/Developers/Developer-Library/Documentation/API/Security/Oauth_2.0_Authentication), but to get this project out there in the ether -- I chose to leverage Basic Auth initially.  Check back for modifications that will leverage OAuth 2.0.
+
+Most calls to VersionOne used the [query.v1](http://community.versionone.com/Developers/Developer-Library/Documentation/API/Endpoints/query.v1) endpoint.  This endpoint will take in JSON or YAML query payload and return JSON.  The nice thing about the query.v1 endpoint is that you can make combined queries or [multiple queries](http://community.versionone.com/Developers/Developer-Library/Recipes/Query_for_Burndown_Data) in one request; thus, reducing the round trips.  It also has this great grouping mechanism.  
+
+The only situation I needed to use the legacy [rest-1.v1](http://community.versionone.com/Developers/Developer-Library/Documentation/API/Endpoints/rest-1.v1%2F%2FData) endpoint which is a querystring argument returning XML was for the Cycle Time calculation.  This is because the ability to look back in [history](http://community.versionone.com/Developers/Developer-Library/Documentation/API/Endpoints/rest-1.v1%2F%2FHist) and grab a specific value based on another attribute is  not available in the query.v1.  For this, I used Nokogiri to parse the XML and it worked great!
+
+## DISCLAIMER
+
+The licenses for VersionOne is covered through your agreement with [VersionOne](http://www.versionone.com).  And for Dashing.io, it is covered under [MIT License](https://github.com/Shopify/dashing/blob/master/MIT-LICENSE).  As for this work, it's not guaranteed and made as an example dashboard for those of you using VersionOne and wanting a really cool dashboard like what using Dashing.io can deliver.  This project is not maintained under any agreement with VersionOne or Dashing.io.
