@@ -19,13 +19,31 @@ The dashboard itself is targeted for agile teams that predominantly iterate (i.e
 
 1. Edit the `Gemfile`, add:
 
-   ```Ruby
+   ```ruby
    gem 'httparty'
    gem 'nokogiri'
    ```
 
 1. Execute `bundle`.
-1. dd 
+1. Create a new file in the `lib` directory of your dashboard called `v1conn.rb`.
+2. Add the following contents to the file, changing the baseurl, username, and password to be able to connect to your VersionOne instance.
+ 
+   ```ruby
+   class V1conn
+   	def initialize
+   		@user = "andre"
+   		@pass = "andre"
+   		@auth = {:username => user, :password => pass}
+   		@baseurl = "http://win8/VersionOne"
+   	end
+   
+   	attr_accessor :user
+   	attr_accessor :pass
+   	attr_accessor :auth
+   	attr_accessor :baseurl
+   end
+   ```
+
 
 ## VersionOne Enabled Widgets
 
@@ -43,3 +61,4 @@ The only situation I needed to use the legacy [rest-1.v1](http://community.versi
 ## DISCLAIMER
 
 The licenses for VersionOne is covered through your agreement with [VersionOne](http://www.versionone.com).  And for Dashing.io, it is covered under [MIT License](https://github.com/Shopify/dashing/blob/master/MIT-LICENSE).  As for this work, it's not guaranteed and made as an example dashboard for those of you using VersionOne and wanting a really cool dashboard like what using Dashing.io can deliver.  This project is not maintained under any agreement with VersionOne or Dashing.io.
+
