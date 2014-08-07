@@ -1,5 +1,7 @@
 # V1Dashing - an Agile Team's Dashboard
 
+![V1Dashing](https://raw.github.com/mtbadgley/v1dashing/master/doc/images/fulldashboard_sm.png)
+
 ## Overview
 
 As a coach, a member of a team, a Scrum Master, or a stakeholder, information is incredibly important.  This project is an example of what one can do with the elegance of an open source solution such as [Dashing.io](http://dashing.io) and the power of the best Agile Software Development tool -- [VersionOne](http://www.versionone.com) (full disclosure -- I work at VersionOne as an Agile Coach/Consultant). I was inspired by both the request for such a thing from customers as well as my own desire to learn and produce something others could value and learn from.  The result, I think, is pretty darn cool -- and functional.  
