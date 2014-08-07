@@ -12,7 +12,15 @@ The dashboard itself is targeted for agile teams that predominantly iterate (i.e
 
 ## Getting Started
 
-
+1. Make sure you have Ruby installed (der :) ).  
+1. Once you have Ruby in place, get Dashing.io working.  Their [Getting Started](http://dashing.io/#setup) section spells out the steps.  *NOTE - When you create your first dashboard, name it* `v1dashing`.
+1. Edit the `Gemfile`, add:
+   ```Ruby
+   gem 'httparty'
+   gem 'nokogiri'
+   ```
+1. Execute `bundle`.
+1. dd 
 
 ## VersionOne Enabled Widgets
 
