@@ -56,8 +56,11 @@ The dashboard itself is targeted for agile teams that predominantly iterate (i.e
 | Cumulative Flow | A standard cumulative flow based on total Estimate points that uses the Statuses based on the Project provided, this can be optionally configured to accept a Team | Add ability to filter based on Program. |
 | Cycle Time | Calculates the time it takes to move from one Status within a Project to another -- progression through the SDLC, calculated in days. This is calculated by Project and takes in the number of days to consider as well as the From and To Status. | |
 | Days Left In Sprint | Calculates the number of days left in sprint based on the end date of the current active sprint.  Based on Project specified. | Optionally have it take in the Sprint Schedule. |
-| Defects by Priority | | |
+| Defects by Priority | A pie chart that shows the number of open defects for a specific Project and the current active sprint. Optionally can be configured by Team. | No reason to not have more dimensions -- Status, Feature Group, etc. |
+| Epic Progress | Shows the percentage complete for Epics associated with Project configured.  The Type of Epic is required.  The Team can be optionally specified. | |
 | Sprint Burndown | A standard sprint burndown based on the total remaining To Do. This can be configured against a particular Project backlog and optionally, a Team. | Add Sprint Schedule as a required filter, and make Project optional. |
+| Story Progress | Shows the percentage complete of Stories based on the detail estimate less the remaining work over the detail estimate.  Does not consider Done or Effort in the formula. Configured based on Project, shows for the current active Sprint.  Optionally can configure the Team. | Optionally include Test Sets and Defects. Add the ability to see the ID. |
+| Velocity | Calculates the velocity average for the last three closed sprints.  Configured the Project and Team. | Add the current planned amount. |
 
 ## Technical Details
 
