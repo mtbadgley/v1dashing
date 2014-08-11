@@ -58,7 +58,7 @@ The dashboard itself is targeted for agile teams that predominantly iterate (i.e
 | Days Left In Sprint | Calculates the number of days left in sprint based on the end date of the current active sprint.  Based on Project specified. | Optionally have it take in the Sprint Schedule. |
 | Defects by Priority | A pie chart that shows the number of open defects for a specific Project and the current active sprint. Optionally can be configured by Team. | No reason to not have more dimensions -- Status, Feature Group, etc. |
 | Epic Progress | Shows the percentage complete for Epics associated with Project configured.  The Type of Epic is required.  The Team can be optionally specified. | |
-| Sprint Burndown | A standard sprint burndown based on the total remaining To Do. This can be configured against a particular Project backlog and optionally, a Team. | Add Sprint Schedule as a required filter, and make Project optional. |
+| [Sprint Burndown](https://gist.github.com/mtbadgley/fc81d71152dd32ec5829) | A standard sprint burndown based on the total remaining To Do. This can be configured against a particular Project backlog and optionally, a Team. | Add Sprint Schedule as a required filter, and make Project optional. |
 | Story Progress | Shows the percentage complete of Stories based on the detail estimate less the remaining work over the detail estimate.  Does not consider Done or Effort in the formula. Configured based on Project, shows for the current active Sprint.  Optionally can configure the Team. | Optionally include Test Sets and Defects. Add the ability to see the ID. |
 | Velocity | Calculates the velocity average for the last three closed sprints.  Configured the Project and Team. | Add the current planned amount. |
 
