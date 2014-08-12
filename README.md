@@ -52,7 +52,7 @@ The dashboard itself is targeted for agile teams that predominantly iterate (i.e
 
 | Widget | Description | Roadmap |
 |--------|-------------|------------------|
-| Conversations | Randomly rotates through the Conversations that impact a particularly configured TeamRoom. | |
+| [Conversations](https://gist.github.com/mtbadgley/c33aa779d114999a8c89) | Randomly rotates through the Conversations that impact a particularly configured TeamRoom. | |
 | Cumulative Flow | A standard cumulative flow based on total Estimate points that uses the Statuses based on the Project provided, this can be optionally configured to accept a Team | Add ability to filter based on Program. |
 | Cycle Time | Calculates the time it takes to move from one Status within a Project to another -- progression through the SDLC, calculated in days. This is calculated by Project and takes in the number of days to consider as well as the From and To Status. | |
 | Days Left In Sprint | Calculates the number of days left in sprint based on the end date of the current active sprint.  Based on Project specified. | Optionally have it take in the Sprint Schedule. |
