@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
-# Module defined in v1conn.rb file
 
+# Update the username, password, and baseurl
 class V1conn
 	def initialize
 		@user = "andre"
@@ -12,6 +12,5 @@ class V1conn
 	attr_accessor :user
 	attr_accessor :pass
 	attr_accessor :auth
-	attr_accessor :queryurl
 	attr_accessor :baseurl
 end

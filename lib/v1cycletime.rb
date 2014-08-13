@@ -55,7 +55,11 @@ class V1CycleTime
 				changedate = asset.xpath('Attribute[@name=\'ChangeDate\']').text[0..9]
 				cycledays = GetWorkitemCycleTime(oid,changedate,parentprojectid,fromstatus).to_f
 				if cycledays > 0
-					cycletime = (cycletime + cycledays) / 2
+					if cycletime > 0
+						cycletime = (cycletime + cycledays) / 2
+					else
+						cycletime = cycledays
+					end
 				end
 				lastoid = oid
 			end
