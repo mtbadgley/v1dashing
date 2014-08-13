@@ -54,7 +54,7 @@ The dashboard itself is targeted for agile teams that predominantly iterate (i.e
 |--------|-------------|------------------|
 | [Conversations](https://gist.github.com/mtbadgley/c33aa779d114999a8c89) | Randomly rotates through the Conversations that impact a particularly configured TeamRoom. | |
 | [Cumulative Flow](https://gist.github.com/mtbadgley/6ce4bc48d6b2baed1967) | A standard cumulative flow based on total Estimate points that uses the Statuses based on the Project provided, this can be optionally configured to accept a Team | Add ability to filter based on Program. |
-| Cycle Time | Calculates the time it takes to move from one Status within a Project to another -- progression through the SDLC, calculated in days. This is calculated by Project and takes in the number of days to consider as well as the From and To Status. | |
+| [Cycle Time](https://gist.github.com/mtbadgley/f0cad3af641fba4a15c0) | Calculates the time it takes to move from one Status within a Project to another -- progression through the SDLC, calculated in days. This is calculated by Project and takes in the number of days to consider as well as the From and To Status. | |
 | Days Left In Sprint | Calculates the number of days left in sprint based on the end date of the current active sprint.  Based on Project specified. | Optionally have it take in the Sprint Schedule. |
 | Defects by Priority | A pie chart that shows the number of open defects for a specific Project and the current active sprint. Optionally can be configured by Team. | No reason to not have more dimensions -- Status, Feature Group, etc. |
 | Epic Progress | Shows the percentage complete for Epics associated with Project configured.  The Type of Epic is required.  The Team can be optionally specified. | |
